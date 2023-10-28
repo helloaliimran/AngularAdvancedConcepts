@@ -82,7 +82,35 @@ property binding example:
 ``` public myname:boolean = false; ```
 
 
+#### Basic Form Example
+1. Import form module.
+2. Make simple form.
+3. Get form value.
 
+- app.module.ts
+``` import { FormsModule } from '@angular/forms'; ```
+``` imports: [FormsModule ] ```
+
+- form html component part
+
+```
+<form #basicForm="ngForm" (ngSubmit)="getFormData(basicForm.value)"  >
+
+    <input type="text" ngModel name="user" placeholder="name"/>
+    <br/>
+    <input type="text" ngModel name="email" placeholder="email"/>
+    <br/>
+    <input type="text" ngModel name="pass" placeholder="password"/>
+    <br/>
+    <button>Register!</button>
+</form>
+````
+- In typescript class
+
+``` getFormData(formData:any){ console.log(formData);} ```
+
+
+#### Import Angular concepts Questions for interview.
 
 #### Question 1: What’s the basic syntax of a Decorator in Angular?
 Answer: @() with optional parameters.
