@@ -64,11 +64,8 @@ Answer: When passing data from Parent to Child component, you can use the @Input
 the Child component. When passing data from Child to Parent component, you can use the @Output
 decorator in the Child component.
 
-#### Question 6. Write an example usage of ngFor for displaying all items from an array ‘Items’ in a list with <li>.
-Answer:
-<li *ngFor=”let item of Items”>
-{{item}}
-</li>
+#### Question 6. Write an example usage of ngFor for displaying all items from an array ‘Items’ in a list with ```<li>```.
+Answer:  ```<li *ngFor='let item of Item'>  {{item}} </li> ```
 
 #### Question 7. What is the sequence of Angular Lifecycle Hooks?
 Answer: OnChange() – OnInit() – DoCheck() – AfterContentInit() – AfterContentChecked() –
