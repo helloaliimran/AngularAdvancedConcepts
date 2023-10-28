@@ -42,6 +42,46 @@ Components has 3 parts
    ``` constructor(private _myService: MyFirstServiceService){} ```
 
 
+### Dependency Injection
+- DI as a design pattern: DI is coding pattern in which class receives its dependencies form external sources rather than creating them itself. 
+- DI in angular is typically service.
+- We have 2 simple steps to use DI pattern already implement in creating service.
+1. Providing dependency
+    - decorator ```@injectable ``` show that class can be injectable. 
+    - next step is to make it available in DI container, to do this we have different places.
+    - 1. one place is in the component in the meta data parts. 
+    ``` 
+    @Compoent({
+        ...
+    prodviders: [serviceInjecting] 
+    )}
+    ```
+    - whenyou register provider at component level you get new instance of the servicew with each new instance of component. 
+    - 2. Another place is to register in @NgModule level. By doing this service is available to all components.
+    - Allow injecting it into other classes in the application this can be done by adding 
+      ```@injectable({ provideIn: root}).
+2. Injecting dependency.
+    constructor injection as we do when we use service. ``` constructor(private _myService: MyFirstServiceService){} ```
+
+   
+
+## Property Binding
+``` <input type="text" value='Ali Imran'>```
+```$0.getAttribute('value');``` get attribute value
+```$0.value``` get property value.
+
+Attributs and Properties are not the same. 
+Attributes - HTML - Attributes  initialize DOM properties and then they are done. Attributes value cannot changes once they initialized.
+
+Properties - DOM property values can change. 
+
+property binding example:
+
+ ``` <input [disabled]="myname" type="text" value="ali" />``` OR  ``` <input bind-disabled="myname" type="text" value="ali" />```
+
+``` public myname:boolean = false; ```
+
+
 
 
 #### Question 1: What’s the basic syntax of a Decorator in Angular?
